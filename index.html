@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <!--this first line runs the A-Frame library, this is what gives you "VR mode" !-->
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <!--this is an A-Frame component that allows you to load in MagicaVoxel files!-->
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!--we load all the assets (images, models, sound files etc we want to use in our scene in this a-asset element-->
+      <a-assets>
+        <!--here we give our file an id so we can call it later-->
+        <a-asset-item id="heatmap" src="heatmap-mockup.ply"></a-asset-item>
+      </a-assets>
+      <!--this is the line that actually makes the model show up on the page. We also rotate it 90 degrees and adjust its scale. One voxel is approximately equal to 1 meter in A-Frame-->
+      <a-entity ply-model="src: #heatmap" rotation="-90 0 0" scale="0.1 0.1 0.1"></a-entity>
+    </a-scene>
+  </body>
+</html>
